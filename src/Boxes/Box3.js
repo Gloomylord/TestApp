@@ -50,8 +50,16 @@ const Slider = styled.div`
 }
 `;
 
+const Year = styled.span`
+    position: absolute;
+    color: rgba(236,236,236,0.84);
+    font-size: 2vw;
+    left: ${props => props.PosX};
+    top: 6vh;
+`;
 
-function App({paginationNumber, onTouchStart}) {
+
+function App({paginationNumber}) {
     let [tabNumber, setTabNumber] = useState(0);
     const refSlider = useRef(null);
     const refDiv = useRef(null);
@@ -60,9 +68,9 @@ function App({paginationNumber, onTouchStart}) {
     function onTouch(event) {
         if (refSlider) {
             refThumb.current.style.transition = '';
+            refDiv.current.style.transition = '';
             let shiftX = event.targetTouches[0].screenX - refThumb.current.getBoundingClientRect().left;
 
-            document.removeEventListener('touchstart', onTouchStart);
             document.addEventListener('touchmove', onTouchMove);
             document.addEventListener('touchend', onTouchEnd);
 
@@ -92,6 +100,7 @@ function App({paginationNumber, onTouchStart}) {
 
             function onTouchEnd() {
                 refThumb.current.style.transition = '200ms';
+                refDiv.current.style.transition = '200ms';
                 refThumb.current.style.left = '';
                 refDiv.current.style.width = '';
                 document.removeEventListener('touchend', onTouchEnd);
@@ -113,6 +122,9 @@ function App({paginationNumber, onTouchStart}) {
             <Slider ref={refSlider} tabNumber={tabNumber} paginationNumber={paginationNumber}>
                 <div ref={refDiv}/>
                 <img id='thumb' ref={refThumb} onTouchStart={onTouch} tabIndex={-1} alt='toggle' src='/polygon.png'/>
+                <Year PosX={'0vw'}>1988</Year>
+                <Year PosX={'32.5vw'}>2009</Year>
+                <Year PosX={'65.5vw'}>2016</Year>
             </Slider>
             <Tab1 tabNumber={tabNumber}/>
             <Tab2 tabNumber={tabNumber}/>

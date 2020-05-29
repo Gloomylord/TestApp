@@ -71,7 +71,7 @@ function App() {
                         changePaginationNumber={changePaginationNumber}/>
             <Box1 paginationNumber={paginationNumber}/>
             <Box2 paginationNumber={paginationNumber}/>
-            <Box3 paginationNumber={paginationNumber} onTouchStartProps={onTouchStart}/>
+            <Box3 paginationNumber={paginationNumber}/>
         </div>
     );
 }

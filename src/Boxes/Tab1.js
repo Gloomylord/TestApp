@@ -19,7 +19,7 @@ const Box = styled.div`
   }
   .ice1 {
     top: 28vh;
-    left: 90vw;
+    left: 92vw;
     width: 11vw;
   }
 
@@ -34,7 +34,23 @@ const Box = styled.div`
     left: 0;
     width: 4vw;
   }
+  .tab {
+    width: 90vw;
+    height: 65vh;
+    z-index: 100;
+    left: 5vw;
+    top: 20vh;
+    opacity: 1;
+  }
   
+`;
+const Title = styled.div`
+  position: absolute;
+  font-size: 3.2vw;
+  color: white;
+  left: 10vw;
+  top: 13vh ;
+  font-weight: 100;
 `;
 
 
@@ -45,6 +61,8 @@ function App({tabNumber}) {
             <img className='ice1' tabIndex={-1}  alt='decoration-ice' src='/ice/ice-bottom-tab1.png' />
             <img className='ice2' tabIndex={-1}  alt='decoration-ice' src='/ice/ice-bottom-tab1-2.png' />
             <img className='ice3' tabIndex={-1}  alt='decoration-ice' src='/ice/ice-bottom-tab1-3.png' />
+            <img className='tab' tabIndex={-1}  alt='decoration-ice' src='/tab1.png' />
+            <Title>Звенья патогенеза СД2</Title>
         </Box>
     );
 }
