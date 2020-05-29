@@ -42,6 +42,9 @@ const Box = styled.div`
     top: 20vh;
     opacity: 1;
   }
+  .arrow {
+    filter: invert(1);
+  }
   
 `;
 const Title = styled.div`
@@ -62,6 +65,7 @@ function App({tabNumber}) {
             <img className='ice2' tabIndex={-1}  alt='decoration-ice' src='/ice/ice-bottom-tab1-2.png' />
             <img className='ice3' tabIndex={-1}  alt='decoration-ice' src='/ice/ice-bottom-tab1-3.png' />
             <img className='tab' tabIndex={-1}  alt='decoration-ice' src='/tab1.png' />
+            <img className='tab arrow' tabIndex={-1}  alt='decoration-ice' src='/tab1-arrow.png' />
             <Title>Звенья патогенеза СД2</Title>
         </Box>
     );
